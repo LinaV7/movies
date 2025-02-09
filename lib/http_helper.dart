@@ -14,7 +14,6 @@ class HttpHelper {
   Future<List?> getUpcoming() async {
     final String upcoming = urlBase + urlUpcoming + urlKey + urlLanguage;
     http.Response result = await http.get(Uri.parse(upcoming));
-    // var myResult = await http.get(Uri.parse(upcoming));
 
     if (result.statusCode == HttpStatus.ok) {
       final jsonResponse = json.decode(result.body);
